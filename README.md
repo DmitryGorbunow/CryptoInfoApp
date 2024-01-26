@@ -5,7 +5,7 @@ https://github.com/DmitryGorbunow/CryptoInfoApp/assets/84672242/7834ad2d-e068-4b
 
 
 - Swift, UIKit, MVVM 
-- Kingfisher для загрузки и кэширования
+- Kingfisher для загрузки и кэширования изображений 
 - Адаптация UI для всех iPhone с поддержкой iOS 13+
 - Верстка кодом
 - Выполнена локализация (английский, русский)
