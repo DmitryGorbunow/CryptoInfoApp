@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  CryptoInfo
+
+  Created by Dmitry Gorbunow on 1/26/24.
+  
+*/
+
+"Trending Coins" = "Актуальные монеты";
+"Search by symbol or name" = "Поиск по имени";
+"Market Cap" = "Капитализация";
+"Supply" = "Оборот";
+"Volume 24Hr" = "Объём 24ч";
+"No results" = "Нет результатов";
+"No data" = "Нет данных";
+
