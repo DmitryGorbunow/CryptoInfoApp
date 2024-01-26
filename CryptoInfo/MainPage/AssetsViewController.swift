@@ -44,7 +44,11 @@ class AssetsViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = Fonts.lExt
+        if #available(iOS 16.0, *) {
+            label.font = Fonts.lExt
+        } else {
+            label.font = Fonts.l
+        }
         label.attributedText = NSMutableAttributedString(string: StringValues.trendingCoins, attributes: [NSAttributedString.Key.kern: Constants.kern])
         return label
     }()

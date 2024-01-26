@@ -8,6 +8,7 @@
 import UIKit
 
 private enum Constants {
+    static let alpha5: CGFloat = 0.5
     static let alpha4: CGFloat = 0.4
     static let alpha1: CGFloat = 0.1
     static let kern: CGFloat = 0.48
@@ -22,71 +23,20 @@ class DetailsAssetsViewController: UIViewController {
     let viewModel: DetailsAssetsViewModelProtocol
     
     // MARK: - UI Components
+    private let priceLabel = CustomLabel(font: Fonts.l)
+    private let changeLabel = CustomLabel(font: Fonts.s)
+    private let marketCapDescriptionLabel = CustomLabel(title: StringValues.marketCap, font: Fonts.xs, textColor: .white.withAlphaComponent(Constants.alpha5))
+    private let supplyDescriptionLabel = CustomLabel(title: StringValues.supply, font: Fonts.xs, textColor: .white.withAlphaComponent(Constants.alpha5))
+    private let volume24HrDescriptionLabel = CustomLabel(title: StringValues.volume24Hr, font: Fonts.xs, textColor: .white.withAlphaComponent(Constants.alpha5))
+    private let marketCapLabel = CustomLabel(font: Fonts.m)
+    private let supplyLabel = CustomLabel(font: Fonts.m)
+    private let volume24HrLabel = CustomLabel(font: Fonts.m)
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .bg
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
-    }()
-    
-    private let priceLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = Fonts.l
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private var changeLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.s
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let marketCapDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = StringValues.marketCap
-        label.textColor = .gray
-        label.font = Fonts.xs
-        return label
-    }()
-    
-    private let supplyDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = StringValues.supply
-        label.textColor = .gray
-        label.font = Fonts.xs
-        return label
-    }()
-    
-    private let volume24HrDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = StringValues.volume24Hr
-        label.textColor = .gray
-        label.font = Fonts.xs
-        return label
-    }()
-    
-    private let marketCapLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = Fonts.m
-        return label
-    }()
-    
-    private let supplyLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = Fonts.m
-        return label
-    }()
-    
-    private let volume24HrLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = Fonts.m
-        return label
     }()
     
     private let infoStackView: UIStackView = {
@@ -113,7 +63,11 @@ class DetailsAssetsViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = Fonts.lExt
+        if #available(iOS 16.0, *) {
+            label.font = Fonts.lExt
+        } else {
+            label.font = Fonts.l
+        }
         return label
     }()
     

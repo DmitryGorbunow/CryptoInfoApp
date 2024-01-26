@@ -23,6 +23,11 @@ class AssetsTableViewCell: UITableViewCell {
     }
     
     // MARK: - UI Components
+    private let nameLabel = CustomLabel(font: Fonts.m)
+    private let symbolLabel = CustomLabel(font: Fonts.s, textColor: .white.withAlphaComponent(Constants.alpha))
+    private let priceLabel = CustomLabel(font: Fonts.m)
+    private let changeLabel = CustomLabel(font: Fonts.s)
+    
     private let coinImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .clear
@@ -30,36 +35,7 @@ class AssetsTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.m
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let symbolLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.s
-        label.textColor = .white.withAlphaComponent(Constants.alpha)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let priceLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.m
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let changeLabel: UILabel = {
-        let label = UILabel()
-        label.font = Fonts.s
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+        
     // MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

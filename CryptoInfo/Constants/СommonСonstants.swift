@@ -23,6 +23,7 @@ enum Fonts {
     static let s = UIFont.systemFont(ofSize: 14, weight: .regular)
     static let m = UIFont.systemFont(ofSize: 16, weight: .regular)
     static let l = UIFont.systemFont(ofSize: 24, weight: .regular)
+    @available(iOS 16.0, *)
     static let lExt = UIFont.systemFont(ofSize: 24, weight: .semibold, width: .expanded)
 }
 
